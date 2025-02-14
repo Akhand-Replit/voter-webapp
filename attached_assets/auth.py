@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Static password
-ADMIN_PASSWORD = "AkhandF123!"
+ADMIN_PASSWORD =st.secrets["WEB_PASS"]
 
 def init_auth():
     """Initialize authentication in session state"""
