@@ -9,10 +9,10 @@ class Database:
     def __init__(self):
         try:
             self.conn = psycopg2.connect(
-                dbname='neondb',
-                user='neondb_owner',
-                password='npg_lLN9UO0xJKkr',  # Updated password
-                host='ep-cool-lab-a8he0qob-pooler.eastus2.azure.neon.tech',  # Updated host
+                dbname=st.secrets["DB_NAME"],
+                user=st.secrets["DB_USER"],
+                password=st.secrets["DB_PASSWORD"],  # Updated password
+                host=st.secrets["DB_HOST"],  # Updated host
                 port=5432,  # Port remains the same
                 sslmode='require'
             )
