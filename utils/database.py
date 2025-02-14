@@ -2,6 +2,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import logging
 import os
+import streamlit as st
 
 logger = logging.getLogger(__name__)
 
