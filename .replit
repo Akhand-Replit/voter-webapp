@@ -1,0 +1,48 @@
+modules = ["python-3.11", "nix", "postgresql-16"]
+run = "streamlit run app.py"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["sh", "-c", "streamlit run app.py"]
+
+[workflows]
+runButton = "streamlit"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "streamlit_app"
+
+[[workflows.workflow]]
+name = "streamlit_app"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "streamlit run app.py"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "streamlit"
+author = 39375343
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "streamlit run app.py"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
