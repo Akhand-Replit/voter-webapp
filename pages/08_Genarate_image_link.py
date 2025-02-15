@@ -3,7 +3,7 @@ import requests
 import base64
 
 # Set ImgBB API Key
-IMGBB_API_KEY = "ec519cb1c1643a46e16f22fe58a256cb"
+IMGBB_API_KEY = st.secrets["IMGBB_API_KEY"]
 UPLOAD_URL = "https://api.imgbb.com/1/upload"
 
 # Streamlit UI
