@@ -26,6 +26,18 @@ st.set_page_config(
 # Apply custom styling
 apply_custom_styling()
 
+# Hide Logos watermark of streamli+github
+hide_st_style = """
+<style>
+._profileContainer_gzau3_53 {visibility: hidden!important;}
+._link_gzau3_10  {visibility: hidden!important;}
+.st-emotion-cache-15wzwg4 .e1d5ycv517  {visibility: hidden!important;}
+.st-emotion-cache-q16mip .e1i26tt71  {visibility: hidden!important;}
+
+</style>
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # Initialize authentication
 init_auth()
 
