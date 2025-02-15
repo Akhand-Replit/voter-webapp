@@ -14,3 +14,16 @@ pandas
 plotly
 psycopg2-binary
 streamlit
+openai>=1.61.1
+pandas>=2.2.3
+plotly>=6.0.0
+psycopg2-binary>=2.9.10
+streamlit>=1.42.0
+trafilatura>=2.0.0
+twilio>=9.4.4
+pydrive2
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+requests>=2.31.0
+pyperclip
